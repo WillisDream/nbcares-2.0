@@ -1,0 +1,64 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+   <ion-title>Welcome!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-grid>
+    <ion-row class=" score-row">
+      <ion-col size='12' >
+        <div class="score-div">
+          <p class="p1" >Score</p>
+          <p class="p2" > {{totalScore}}</p>
+        </div>
+        <div routerLink="/vital-signs" class="icon-div">
+          <ion-icon class="housing-icon" name="information-circle" ></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row  class="items-row" >
+      <ion-col size="6">
+        <div routerLink="/housing" class="item-div">
+          <ion-icon class="housing-icon" name="home" ></ion-icon>
+          <p>Housing</p>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div routerLink="/health" class="item-div">
+          <ion-icon class="health-icon" name="fitness" ></ion-icon>
+          <p>Health</p>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div routerLink="/finances" class="item-div">
+          <ion-icon class="finances-icon" name="logo-usd" ></ion-icon>
+            <p>Finances</p>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div routerLink="/education" class="item-div">
+          <ion-icon class="education-icon" name="school" ></ion-icon>
+          <p>Education</p>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div routerLink="/career" class="item-div">
+          <ion-icon class="career-icon" name="briefcase" ></ion-icon>
+          <p>Career</p>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div (click)="openZoom()" class="item-div">
+          <ion-icon class="chat-icon" name="chatbox-ellipses" ></ion-icon>
+          <p>Chat</p>
+        </div>
+      </ion-col>
+
+    </ion-row>
+</ion-grid>
+
+</ion-content>
+

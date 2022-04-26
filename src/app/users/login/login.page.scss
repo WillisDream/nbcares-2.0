@@ -1,0 +1,46 @@
+ion-content{
+    padding: 16px;
+    .logo-div{
+        margin-top: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-img{
+            width: 40vw;
+    
+        }
+    }
+    .input-item{
+        margin-top: 1vh;
+        color: var(--ion-color-primary);
+        --border-color	: var(--ion-color-primary);
+        // --inner-border-width	: 2px;
+        ion-input{
+            margin-left: 10px;
+        }
+
+    }
+    form{
+        margin-top: 8vh;
+        padding: 16px;
+    }
+    .forgot-password{
+        text-align: right;
+        margin-top: 12px;
+
+    }
+    .no-accont-text{
+        margin-top: 5vh;
+        text-align: center;
+        color: var(--ion-color-primary);
+    }
+    .btn-div{
+        margin-top: 3vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-button{
+            width: 100%;
+        }
+    }
+}

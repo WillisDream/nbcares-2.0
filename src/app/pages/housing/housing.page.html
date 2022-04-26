@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-back-button  slot="start" ></ion-back-button>
+    <ion-title>Housing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="score-div" >
+    <p class="p1" >Score</p>
+    <p class="p2" >{{totalScore}}</p>
+  </div>
+<ion-item *ngFor="let item of items" class="list-items" lines="full">
+<ion-list>
+  <ion-label color="danger" class="l1" >Task</ion-label>
+  <ion-label class="l2">{{item.task}}</ion-label>
+  <ion-label class="l3"  *ngIf="item.deadLine">at {{getFormattedTime(item.deadLine)}}</ion-label>
+  <ion-buttons mode="ios">
+    <ion-button *ngIf="!item.isCompleted" fill="solid" (click)="completeTask(item)" >Complete</ion-button>
+    <ion-button (click)="addDeadLine(item)"  [id]="item.id"  *ngIf="!item.deadLine" fill="solid"  color="warning" >Add Deadline </ion-button>
+    
+    <ion-button *ngIf="item.userAdded" (click)="addTask(true, item)"  fill="solid" color="danger">Edit</ion-button>
+  </ion-buttons>
+</ion-list>
+<ion-icon *ngIf="item.isCompleted" slot="end" color="success" name="checkmark-circle"></ion-icon>
+</ion-item>
+
+<ion-fab *ngIf="this.items.length == 6" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addTask(false)" >
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

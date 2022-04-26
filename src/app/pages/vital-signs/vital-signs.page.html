@@ -1,0 +1,197 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Vital Signs</ion-title>
+  </ion-toolbar>
+  <ion-segment
+    mode="md"
+    [value]="currentSegment"
+    (ionChange)="segmentChanged($event)"
+  >
+    <ion-segment-button value="1">
+      <ion-label>Self Assessment</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      <ion-label>Financial</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="currentSegment == '1'">
+    <div class="score-div">
+      <p class="p2">
+        {{selfAssessmentCurrentPoints ? selfAssessmentCurrentPoints : 0}} / 54
+      </p>
+    </div>
+    <form [formGroup]="selfAssessmentForm">
+      <div style="margin-top: 20px" class="grid-container dark-bg">
+        <div><p>Fundations</p></div>
+        <div>6</div>
+        <div>5</div>
+        <div>4</div>
+        <div>3</div>
+        <div>2</div>
+        <div>1</div>
+      </div>
+      <ion-radio-group formControlName="life">
+        <div class="grid-container">
+          <div><p>Life</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="visionOfSelf">
+        <div class="grid-container light-bg">
+          <div><p>Vision of Self</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="physicalHealth">
+        <div class="grid-container">
+          <div><p>Physical Health</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="mentalHealth">
+        <div class="grid-container light-bg">
+          <div><p>Mental Health</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="housing">
+        <div class="grid-container">
+          <div><p>Housing</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="community">
+        <div class="grid-container light-bg">
+          <div><p>Community</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="network">
+        <div class="grid-container">
+          <div><p>Network</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="job">
+        <div class="grid-container light-bg">
+          <div><p>Job / Career</p></div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <ion-radio-group formControlName="education">
+        <div class="grid-container">
+          <div>
+            <p>Education / Training</p>
+          </div>
+          <div><ion-radio [value]="6" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="5" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="4" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="3" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="2" mode="md"></ion-radio></div>
+          <div><ion-radio [value]="1" mode="md"></ion-radio></div>
+        </div>
+      </ion-radio-group>
+      <div class="btn-div">
+        <ion-button (click)="submitSelfAssessment()">Submit</ion-button>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-container *ngIf="currentSegment == '2'">
+    <div style="padding: 10px">
+      <form [formGroup]="tableDatasForm" >
+        <table>
+          <tr>
+            <th>Vital Signs</th>
+            <th style="width: 22%">Baseline Data</th>
+            <th style="width: 22%">Now</th>
+            <th style="width: 22%">Delta (+/-)</th>
+          </tr>
+          <tr>
+            <td>Monthly Income($)</td>
+            <td> {{user.monthlyIncomePrevious ? user.monthlyIncomePrevious : null}} </td>
+            <td><ion-input placeholder="$$$" formControlName="monthlyIncome"></ion-input></td>
+            <td> <ng-container *ngIf="user.monthlyIncomePrevious && user.monthlyIncome" > {{user.monthlyIncome - user.monthlyIncomePrevious}} </ng-container> </td>
+          </tr>
+          <tr>
+            <td>Credit Score($)</td>
+            <td> {{user.creditScorePrevious ? user.creditScorePrevious : null}} </td>
+            <td><ion-input placeholder="$$$" formControlName="creditScore" ></ion-input></td>
+            <td> <ng-container *ngIf="user.creditScorePrevious && user.creditScore" > {{user.creditScore - user.creditScorePrevious}} </ng-container> </td>
+          </tr>
+          <tr>
+            <td>Emergency Fund($)</td>
+            <td> {{user.emergenyFundPrevious ? user.emergenyFundPrevious : null}} </td>
+            <td><ion-input placeholder="$$$" formControlName="emergenyFund"></ion-input></td>
+            <td> <ng-container *ngIf="user.emergenyFundPrevious && user.emergenyFund" > {{user.emergenyFund - user.emergenyFundPrevious}} </ng-container> </td>
+          </tr>
+          <tr>
+            <td>Self-Assessment</td>
+            <td>{{user.selfAssessmentPreviousPoints}}</td>
+            <td>{{user.selfAssessmentCurrentPoints}}</td>
+            <td>
+            
+              <ng-container *ngIf="user.selfAssessmentCurrentPoints && user.selfAssessmentPreviousPoints">
+                {{user.selfAssessmentCurrentPoints -
+                  user.selfAssessmentPreviousPoints}}
+              </ng-container>
+            </td>
+          </tr>
+          <tr>
+            <td>Self-Sufficiency Score</td>
+            <td></td>
+            <td>{{user.points}}</td>
+            <td></td>
+          </tr>
+        </table>
+      </form>
+      <div class="btn-div">
+        <ion-button (click)="submitTableDatas()" >Submit</ion-button>
+      </div>
+    </div>
+  </ng-container>
+</ion-content>

@@ -1,0 +1,72 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title text-center>
+      Tab 1
+    </ion-title>
+    
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/login']"  >
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+</ion-content>
+-->
+<ion-header class="ion-text-center">
+  <ion-toolbar color="primary">
+   <ion-title>Welcome!</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<!-- icons grid -->
+
+<ion-grid>
+
+    <ion-row class="ion-text-center">
+      <ion-col size="12" routerLink >
+        <ion-icon style="height: 90px; width: 90px;" src="/assets/shapes.svg"></ion-icon>
+        <p>Score</p>
+      </ion-col>
+        <ion-col size="6" routerLink="/housing">
+            <ion-icon class="housing-icon" name="home" ></ion-icon>
+            <p>Housing</p>
+        </ion-col>
+        <ion-col size="6" routerLink="/health">
+            <ion-icon class="health-icon" name="fitness" ></ion-icon>
+            <p>Health</p>
+        </ion-col>
+        <ion-col size="6" routerLink="/finances">
+            <ion-icon class="finances-icon" name="logo-usd" ></ion-icon>
+            <p>Finances</p>
+        </ion-col>
+        <ion-col size="6" routerLink="/education">
+          <ion-icon class="education-icon" name="school" ></ion-icon>
+          <p>Education</p>
+        </ion-col>
+        <ion-col size="6" routerLink="/career">
+          <ion-icon class="career-icon" name="briefcase" ></ion-icon>
+          <p>Career</p>
+        </ion-col>
+        <ion-col size="6" routerLink="/chat">
+          <ion-icon class="chat-icon" name="chatbox-ellipses" ></ion-icon>
+          <p>chat</p>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+</ion-content>
+

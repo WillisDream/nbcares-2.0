@@ -1,0 +1,179 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start" color="light"></ion-back-button>
+    <ion-title>Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="currentStep == 1">
+    <div style="padding: 10px" class="ion-padding">
+      <p class="p1">NB CARES</p>
+      <p class="p2">
+        (Collaborating Actively on Resident Empowerment and Success)
+      </p>
+      <p class="p3">Authorization to Disclose and Obtain Information</p>
+      <p class="p4">
+        I, {{name}}, hereby authorize agencies
+        participating in the NB CARES Program to disclose, obtain, or
+        communicate information about my participation and progress in this
+        self-sufficiency initiative. Authorized agencies include the American
+        Job Center, the Bristol Department of Adult Education, Central
+        Connecticut State University, Community Health Center, Inc., Coram Deo,
+        the Connecticut Association of Human Services, the Consolidated School
+        District of New Britain, Family Promise of Central Connecticut, the
+        Hospital of Central Connecticut, the Housing Authority of the City of
+        New Britain, HRA of New Britain, Liberty Integrated Behavioral Health,
+        the Prudence Crandall Center, the Salvation Army, Tunxis Community
+        College, the Wheeler Clinic, the YWCA of New Britain, and other
+        participating agencies where necessary.
+      </p>
+      <p class="p4">
+        Included in this authorization are myself and the following family
+        members:
+      </p>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="input-item">
+            <ion-input [(ngModel)]="signDatas.member1" placeholder="Member 1"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input-item">
+            <ion-input [(ngModel)]="signDatas.member2" placeholder="Member 2"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input-item">
+            <ion-input [(ngModel)]="signDatas.member3" placeholder="Member 3"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input-item">
+            <ion-input [(ngModel)]="signDatas.member4" placeholder="Member 4"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <p class="p4">
+        The authorized agencies might disclose, obtain, and communicate
+        information to the aforementioned agencies concerning housing status,
+        homeownership, primary, secondary, and college education, special
+        education and PPTs, school guidance counseling, employment programming,
+        employment training, financial coaching, credit counseling, Department
+        of Social Services interaction, medical, dental, vision, and mental
+        health appointments, Licensed Clinical Social Worker appointments, and
+        contact with other social service programs.
+      </p>
+      <p class="p4">
+        Information disclosed, obtained, and communicated will be used only for
+        the purposes of planning for services, except as otherwise allowed by
+        law. The purposes of this disclosure and information disclosed,
+        obtained, and communicated will be for treatment planning, service
+        coordination, case management, individual business plan development,
+        mentoring, life coaching, financial coaching, educational and IEP
+        planning, and other requests as made by participants of the program.
+      </p>
+      <p class="p4">
+        This release of information shall be effective until December 31, 2022.
+        I understand that I may revoke this authorization by informing any
+        participating agency in writing that I have withdrawn my participation
+        in the NB CARES initiative.
+      </p>
+      <p class="p4">
+        By signing below, I acknowledge that I have read and understand this
+        authorization. My signature below serves as attestation to the fact that
+        I am the client, or I am the parent of the child whose information I am
+        authorizing disclosure of.
+      </p>
+      <!-- <p class="p4">Signature</p>
+      <div class="signature-pad">
+        
+      </div> -->
+      <ion-item lines="none" class="signature-item">
+        <p class="text"> Signature</p>
+        <ion-button (click)="addSignature(1)" slot="end" size="small"
+          >Add</ion-button
+        >
+      </ion-item>
+      <ion-img
+      class="signature-image"
+      *ngIf="signDatas.signature1 "
+      [src]="signDatas.signature1"
+    ></ion-img>
+      <p class="p4">Date : {{getDate()}}</p>
+      <div class="btns-div">
+        <ion-button (click)="nextClicked()" >Next</ion-button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="currentStep == 2">
+    <div style="padding: 10px">
+      <p class="p1">NB CARES</p>
+
+      <p class="p3">Image Release Form</p>
+      <p class="p4">
+        I, the undersigned, do hereby consent and agree that NB CARES, its
+        participating agencies, and their employees have the right to take
+        photographs, videotape, or digital recordings of both me and my children
+        beginning on January 1, 2022, and ending on December 31, 2024 and to use
+        these in any and all media, now or hereafter known, and exclusively for
+        the purpose of marketing, promoting, publicizing, and reporting back to
+        their respective agencies and media outlets this program and the results
+        thereof. I further consent that my name and identity may be revealed
+        therein or by descriptive text or commentary.
+      </p>
+      <p class="p4">
+        I do hereby release to NB CARES, its participating agencies, and their
+        employees all rights to exhibit this work in print and electronic form
+        publicly or privately and to market and sell copies. I waive any rights,
+        claims, or interest I may have to control the use of my identity or
+        likeness in whatever media used.
+      </p>
+      <p class="p4">
+        I understand that there will be no financial or other remuneration for
+        recording me, either for initial or subsequent transmission or playback.
+      </p>
+      <p class="p4">
+        I also understand that NB CARES is not responsible for any expense or
+        liability incurred as a result of my participation in this recording,
+        including medical expenses due to any sickness or injury incurred as a
+        result.
+      </p>
+      <p class="p4">
+        I represent that I am at least 18 years of age, have read and understand
+        the previous statement, and am competent to execute this agreement.
+      </p>
+      <ion-item class="input-item2" >
+        <ion-input [(ngModel)]="signDatas.name" placeholder="Name" ></ion-input>
+      </ion-item>
+      <ion-item class="input-item2" >
+        <ion-input [(ngModel)]="signDatas.address" placeholder="Adddress" ></ion-input>
+      </ion-item>
+      <ion-item class="input-item2" >
+        <ion-input [(ngModel)]="signDatas.phone" placeholder="Phone" ></ion-input>
+      </ion-item>
+      <ion-item class="input-item2" >
+        <ion-input [(ngModel)]="signDatas.witness" placeholder="Witness for the undersigned" ></ion-input>
+      </ion-item>
+      <!-- <p class="p4">Signature</p>
+      <div class="signature-pad"></div> -->
+      <ion-item lines="none" class="signature-item">
+        <p class="text"> Signature</p>
+        <ion-button (click)="addSignature(2)" slot="end" size="small"
+          >Add</ion-button
+        >
+      </ion-item>
+      <ion-img
+      class="signature-image"
+      *ngIf="signDatas.signature2"
+      [src]="signDatas.signature2"
+    ></ion-img>
+      <p class="p4">Date : 2022-14-08</p>
+      <div class="btns-div">
+        <ion-button (click)="submitClicked()" >Submit</ion-button>
+      </div>
+    </div>
+
+
+  </ng-container>
+</ion-content>
