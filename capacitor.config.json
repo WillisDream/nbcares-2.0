@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Nbcares",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

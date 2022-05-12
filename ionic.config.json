@@ -1,0 +1,7 @@
+{
+  "name": "Nbcares",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,27 @@
+<ion-content class="ion-padding" >
+<div class="logo-div">
+  <ion-img src="assets/img/logo.jpeg" class="img-fluid" alt=""></ion-img>
+</div>
+<form [formGroup]="loginForm"  class="ion-padding" >
+  <ion-item lines="full" class="input-item">
+    <ion-icon slot="start" name="mail"></ion-icon>
+    <ion-input formControlName='email' placeholder="Enter your email"></ion-input>
+  </ion-item>
+  <div *ngIf="loginForm.get('email').invalid && showWarnings">
+    <p class="alert-message">Enter a valid email.</p>
+  </div>
+  <ion-item lines="full" class="input-item">
+    <ion-icon slot="start" name="lock-closed"></ion-icon>
+    <ion-input formControlName="password" type="password" placeholder="********"></ion-input>
+  </ion-item>
+  <div *ngIf="loginForm.get('password').invalid && showWarnings">
+    <p class="alert-message">Enter a valid password.</p>
+  </div>
+  <p class="forgot-password" >Forgot Password?</p>
+  <div class="btn-div">
+   <ion-button (click)="login()" > LOGIN</ion-button>
+  </div>
+  <p class="no-accont-text" >Don't have an account? <b routerLink="/signup" >Signup Here</b></p>
+</form>
+
+</ion-content>

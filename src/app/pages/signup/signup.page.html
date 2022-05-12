@@ -1,0 +1,35 @@
+<ion-content class="ion-padding" >
+  <div class="logo-div">
+    <ion-img src="assets/img/logo.jpeg" class="img-fluid" alt=""></ion-img>
+  </div>
+  <form [formGroup]="signupForm"  class="ion-padding" >
+    <ion-item lines="full" class="input-item">
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-input formControlName='name' placeholder="Name"></ion-input>
+    </ion-item>
+    <div *ngIf="signupForm.get('email').invalid && showWarnings">
+      <p class="alert-message">Enter a valid email.</p>
+    </div>
+    <ion-item lines="full" class="input-item">
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-input formControlName='email' placeholder="Email"></ion-input>
+    </ion-item>
+    <div *ngIf="signupForm.get('email').invalid && showWarnings">
+      <p class="alert-message">Enter a valid email.</p>
+    </div>
+    <ion-item lines="full" class="input-item">
+      <ion-icon slot="start" name="lock-closed"></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <div *ngIf="signupForm.get('password').invalid && showWarnings">
+      <p class="alert-message">Enter a valid password.</p>
+    </div>
+    
+    <div class="btn-div">
+     <ion-button (click)="signup()" > SIGN UP</ion-button>
+    </div>
+    <p class="no-accont-text" >Already have an account? <b routerLink="/login" >Login Here</b></p>
+
+  </form>
+  
+  </ion-content>

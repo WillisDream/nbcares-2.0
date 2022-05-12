@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{isEditing ? 'Edit' : 'Add'}} Task</ion-title>
+    <ion-button (click)="dismiss()" slot="end" size="small" icon-only color="light">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding" >
+<div style="padding: 16px;">
+  <ion-item>
+    <ion-label position="floating"  >Task Name</ion-label>
+    <ion-input [(ngModel)]="taskName"></ion-input>
+  </ion-item>
+  <p class="p1" >Dead Line</p>
+  <ion-datetime presentation="date-time"></ion-datetime>
+  <div class="btn-div">
+    <ion-button [disabled]="!taskName"  (click)="addTask()" >{{isEditing ? 'Update': 'Add'}}</ion-button>
+  </div>
+ 
+</div>
+</ion-content>

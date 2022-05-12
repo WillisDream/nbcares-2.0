@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="end">
+      <ion-button color="light" expand="full" (click)="undo()">
+        <ion-icon name="arrow-undo-outline"></ion-icon
+      ></ion-button>
+      <ion-button color="light" expand="full" (click)="clear()">
+        <ion-icon name="refresh-outline"></ion-icon
+      ></ion-button>
+      <ion-button
+        color="light"
+        expand="full"
+        [disabled]="isCanvasBlank()"
+        (click)="save()"
+      >
+        <ion-icon name="save-outline"></ion-icon
+      ></ion-button>
+      <ion-button color="light" expand="full" (click)="close()">
+        <ion-icon name="close-outline"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+    <ion-title> Sign </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <canvas
+    class="signature-pad-canvas"
+    #canvas
+    width="900"
+    height="400"
+    style="touch-action: none"
+  ></canvas> </ion-content
+>>
